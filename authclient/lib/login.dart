@@ -14,14 +14,14 @@ class LoginPage extends StatelessWidget {
       );
 
   Future<String> attemptLogIn(String username, String password) async {
-    var res = await http.post("http://10.0.2.2:3000/login",
+    var res = await http.post("https://192.168.0.5:3000/login",
         body: {"username": username, "password": password});
     if (res.statusCode == 200) return res.body;
     return null;
   }
 
   Future<int> attemptSignUp(String username, String password) async {
-    var res = await http.post('http://10.0.2.2:3000/signup',
+    var res = await http.post('https://192.168.0.5:3000/signup',
         body: {"username": username, "password": password});
     return res.statusCode;
   }
